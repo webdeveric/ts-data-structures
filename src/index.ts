@@ -1,3 +1,2 @@
-export function demo(): boolean {
-  return true;
-}
+// Intentionally empty. Use specific paths.
+export default {};
