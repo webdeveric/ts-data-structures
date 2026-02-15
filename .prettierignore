@@ -9,3 +9,4 @@ private/
 .nvmrc
 .prettierignore
 pnpm-lock.yaml
+LICENSE
