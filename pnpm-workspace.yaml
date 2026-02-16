@@ -1,3 +1,5 @@
 minimumReleaseAge: 2880 # 2 days
 minimumReleaseAgeExclude:
   - validate-package-exports
+  - '@typescript-eslint/*'
+  - '@webdeveric/eslint-config-ts'
