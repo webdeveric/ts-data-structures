@@ -26,6 +26,9 @@ importers:
       '@webdeveric/prettier-config':
         specifier: ^0.3.0
         version: 0.3.0(prettier@3.8.1)
+      '@webdeveric/utils':
+        specifier: ^0.74.1
+        version: 0.74.1
       commitlint:
         specifier: ^20.4.1
         version: 20.4.1(@types/node@22.19.11)(typescript@5.9.3)

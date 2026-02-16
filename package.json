@@ -63,6 +63,7 @@
     "@vitest/coverage-v8": "^4.0.18",
     "@webdeveric/eslint-config-ts": "^0.11.0",
     "@webdeveric/prettier-config": "^0.3.0",
+    "@webdeveric/utils": "^0.74.1",
     "commitlint": "^20.4.1",
     "commitlint-plugin-cspell": "^0.4.0",
     "conventional-changelog-conventionalcommits": "^9.1.0",
