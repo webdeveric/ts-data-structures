@@ -16,7 +16,7 @@ describe('DoublyLinkedList()', () => {
 
     list.push(3, 4, 5);
 
-    // @ts-expect-error
+    // @ts-expect-error test calling push with no arguments
     expect(list.push()).toEqual(5);
 
     expect([...list]).toEqual([1, 2, 3, 4, 5]);
@@ -50,7 +50,7 @@ describe('DoublyLinkedList()', () => {
     const list = new DoublyLinkedList<number>();
 
     expect(list.unshift(0, 1, 2)).toEqual(3);
-    // @ts-expect-error
+    // @ts-expect-error test calling unshift with no arguments
     expect(list.unshift()).toEqual(3);
     expect(list.unshift(-2, -1)).toEqual(5);
     expect([...list]).toEqual([-2, -1, 0, 1, 2]);
@@ -59,15 +59,15 @@ describe('DoublyLinkedList()', () => {
   it('some()', () => {
     const list = new DoublyLinkedList<number>([1, 2]);
 
-    expect(list.some((x) => x === 2)).toBeTruthy();
-    expect(list.some((x) => x === 3)).toBeFalsy();
+    expect(list.some((value) => value === 2)).toBeTruthy();
+    expect(list.some((value) => value === 3)).toBeFalsy();
   });
 
   it('every()', () => {
     const list = new DoublyLinkedList<number>([1, 2]);
 
-    expect(list.every((x) => x > 0)).toBeTruthy();
-    expect(list.every((x) => x < 0)).toBeFalsy();
+    expect(list.every((value) => value > 0)).toBeTruthy();
+    expect(list.every((value) => value < 0)).toBeFalsy();
   });
 
   it('clone()', () => {

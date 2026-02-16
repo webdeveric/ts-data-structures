@@ -45,7 +45,7 @@ describe('LinkedList()', () => {
     const list = new LinkedList<number>([1, 2]);
 
     expect(list.unshift(0)).toEqual(3);
-    // @ts-expect-error
+    // @ts-expect-error test calling unshift with no arguments
     expect(list.unshift()).toEqual(3);
     expect(list.unshift(-2, -1)).toEqual(5);
     expect([...list]).toEqual([-2, -1, 0, 1, 2]);
@@ -66,15 +66,15 @@ describe('LinkedList()', () => {
   it('some()', () => {
     const list = new LinkedList<number>([1, 2]);
 
-    expect(list.some((x) => x === 2)).toBeTruthy();
-    expect(list.some((x) => x === 3)).toBeFalsy();
+    expect(list.some((value) => value === 2)).toBeTruthy();
+    expect(list.some((value) => value === 3)).toBeFalsy();
   });
 
   it('every()', () => {
     const list = new LinkedList<number>([1, 2]);
 
-    expect(list.every((x) => x > 0)).toBeTruthy();
-    expect(list.every((x) => x < 0)).toBeFalsy();
+    expect(list.every((value) => value > 0)).toBeTruthy();
+    expect(list.every((value) => value < 0)).toBeFalsy();
   });
 
   it('clone()', () => {
