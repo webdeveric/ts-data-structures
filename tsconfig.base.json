@@ -13,7 +13,7 @@
     "incremental": true,
     "isolatedModules": true,
     "types": ["node"],
-    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator"],
+    "lib": ["es2024", "ESNext"],
     "listEmittedFiles": true,
     "module": "Node16",
     "moduleResolution": "Node16",
