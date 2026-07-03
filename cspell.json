@@ -12,6 +12,7 @@
     "tsgo",
     "typecheck",
     "unrs-resolver",
+    "vite",
     "vitest",
     "webdeveric"
   ],
