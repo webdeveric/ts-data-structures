@@ -4,11 +4,5 @@ allowBuilds:
 
 minimumReleaseAge: 2880 # 2 days
 
-minimumReleaseAgeExclude:
-  - '@webdeveric/eslint-config-ts'
-  - '@webdeveric/utils'
-  - validate-package-exports
-  - vite@8.0.16
-
 overrides:
   vite@>=8.0.0 <=8.0.15: ^8.0.16
