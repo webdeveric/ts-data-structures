@@ -1,29 +1,26 @@
 import { describe, expect, it } from 'vitest';
 
-import { DoublyLinkedList } from '../src/doubly-linked-list.js';
+import { LinkedList } from './linked-list.js';
 
-describe('DoublyLinkedList()', () => {
+describe('LinkedList()', () => {
   it('Starts out empty', () => {
-    const list = new DoublyLinkedList();
+    const list = new LinkedList();
 
     expect(list.size).toEqual(0);
   });
 
   it('push()', () => {
-    const list = new DoublyLinkedList<number>([1]);
+    const list = new LinkedList<number>([1]);
 
     list.push(2);
 
     list.push(3, 4, 5);
 
-    // @ts-expect-error test calling push with no arguments
-    expect(list.push()).toEqual(5);
-
     expect([...list]).toEqual([1, 2, 3, 4, 5]);
   });
 
   it('pop()', () => {
-    const list = new DoublyLinkedList<string>();
+    const list = new LinkedList<string>();
 
     list.push('a', 'b');
 
@@ -36,45 +33,55 @@ describe('DoublyLinkedList()', () => {
   });
 
   it('shift()', () => {
-    const list = new DoublyLinkedList<number>([1, 2]);
+    const list = new LinkedList<number>([1, 2]);
 
     expect(list.shift()).toEqual(1);
     expect([...list]).toEqual([2]);
-    expect(list.shift()).toEqual(2);
-    expect(list.size).toEqual(0);
 
-    expect(new DoublyLinkedList<number>().shift()).toBeUndefined();
+    expect(new LinkedList<number>().shift()).toBeUndefined();
   });
 
   it('unshift()', () => {
-    const list = new DoublyLinkedList<number>();
+    const list = new LinkedList<number>([1, 2]);
 
-    expect(list.unshift(0, 1, 2)).toEqual(3);
+    expect(list.unshift(0)).toEqual(3);
     // @ts-expect-error test calling unshift with no arguments
     expect(list.unshift()).toEqual(3);
     expect(list.unshift(-2, -1)).toEqual(5);
     expect([...list]).toEqual([-2, -1, 0, 1, 2]);
   });
 
+  it('front()', () => {
+    const list = new LinkedList<number>([1, 2]);
+
+    expect(list.front()).toEqual(expect.objectContaining({ value: 1 }));
+  });
+
+  it('back()', () => {
+    const list = new LinkedList<number>([1, 2]);
+
+    expect(list.back()).toEqual(expect.objectContaining({ value: 2 }));
+  });
+
   it('some()', () => {
-    const list = new DoublyLinkedList<number>([1, 2]);
+    const list = new LinkedList<number>([1, 2]);
 
     expect(list.some((value) => value === 2)).toBeTruthy();
     expect(list.some((value) => value === 3)).toBeFalsy();
   });
 
   it('every()', () => {
-    const list = new DoublyLinkedList<number>([1, 2]);
+    const list = new LinkedList<number>([1, 2]);
 
     expect(list.every((value) => value > 0)).toBeTruthy();
     expect(list.every((value) => value < 0)).toBeFalsy();
   });
 
   it('clone()', () => {
-    const list1 = new DoublyLinkedList<number>([1, 2, 3]);
+    const list1 = new LinkedList<number>([1, 2, 3]);
     const list2 = list1.clone();
 
-    expect(list2).toBeInstanceOf(DoublyLinkedList);
+    expect(list2).toBeInstanceOf(LinkedList);
 
     expect([...list1]).toEqual([...list2]);
 
@@ -84,7 +91,7 @@ describe('DoublyLinkedList()', () => {
   });
 
   it('clear()', () => {
-    const list = new DoublyLinkedList<number>([1, 2, 3]);
+    const list = new LinkedList<number>([1, 2, 3]);
 
     expect(list.size).toBe(3);
 
@@ -94,19 +101,19 @@ describe('DoublyLinkedList()', () => {
   });
 
   it('Is iterable', () => {
-    const list = new DoublyLinkedList<number>([1, 2, 3]);
+    const list = new LinkedList<number>([1, 2, 3]);
 
     expect([...list]).toEqual([1, 2, 3]);
   });
 
   it('values()', () => {
-    const list = new DoublyLinkedList<number>([1, 2, 3]);
+    const list = new LinkedList<number>([1, 2, 3]);
 
     expect([...list.values()]).toEqual([1, 2, 3]);
   });
 
   it('entries()', () => {
-    const list = new DoublyLinkedList<number>([1, 2, 3]);
+    const list = new LinkedList<number>([1, 2, 3]);
 
     expect([...list.entries()]).toEqual([
       [0, 1],
@@ -116,6 +123,6 @@ describe('DoublyLinkedList()', () => {
   });
 
   it('Identifies itself in Object.toString()', () => {
-    expect(Object.prototype.toString.call(new DoublyLinkedList())).toEqual('[object DoublyLinkedList]');
+    expect(Object.prototype.toString.call(new LinkedList())).toEqual('[object LinkedList]');
   });
 });

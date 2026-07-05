@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { Pair } from '../src/pair.js';
+import { Pair } from './pair.js';
 
 describe('Pair()', () => {
   it('Relates two items', () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { Stack } from '../src/stack.js';
+import { Stack } from './stack.js';
 
 describe('Stack()', () => {
   describe('constructor()', () => {

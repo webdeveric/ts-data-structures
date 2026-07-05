@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { Queue } from '../src/queue.js';
+import { Queue } from './queue.js';
 
 describe('Queue()', () => {
   describe('constructor()', () => {
