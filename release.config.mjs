@@ -27,7 +27,7 @@ export default {
           },
           {
             type: 'docs',
-            release: 'patch',
+            release: false,
           },
           {
             type: 'refactor',
