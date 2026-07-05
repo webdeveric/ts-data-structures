@@ -6,7 +6,6 @@ node_modules/
 private/
 .editorconfig
 .npmrc
-.nvmrc
 .prettierignore
 pnpm-lock.yaml
 LICENSE
