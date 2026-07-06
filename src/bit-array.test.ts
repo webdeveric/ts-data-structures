@@ -67,6 +67,39 @@ describe('BitArray()', () => {
     expect(bits.test(35)).toEqual(false);
   });
 
+  describe('storage', () => {
+    it('returns the underlying typed array instance passed to the constructor', () => {
+      const storage = new Uint8Array(4);
+      const bits = new BitArray(storage);
+
+      expect(bits.storage).toBe(storage);
+    });
+
+    it('defaults to Uint32Array-backed storage when constructed with a size', () => {
+      const bits = new BitArray(64);
+
+      expect(bits.storage).toBeInstanceOf(Uint32Array);
+    });
+
+    it('reflects mutations made directly on the returned array', () => {
+      const bits = new BitArray(64);
+
+      bits.storage[0] = 0b101; // 5
+
+      expect(bits.test(0)).toEqual(true);
+      expect(bits.test(1)).toEqual(false);
+      expect(bits.test(2)).toEqual(true);
+    });
+
+    it('exposes mutations made through set() on the returned array', () => {
+      const bits = new BitArray(new Uint8Array(1));
+
+      bits.set(3);
+
+      expect(bits.storage[0]).toEqual(0b1000);
+    });
+  });
+
   it('set()', () => {
     const bits = new BitArray(64);
 
