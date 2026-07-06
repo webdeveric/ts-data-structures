@@ -1,6 +1,6 @@
 {
   "name": "@webdeveric/ts-data-structures",
-  "description": "",
+  "description": "Data structures written in TypeScript",
   "version": "0.0.0",
   "keywords": [],
   "author": "Eric King <eric@webdeveric.com> (https://webdeveric.com/)",
