@@ -1,7 +1,20 @@
 {
   "entryPoints": ["src/*.ts"],
   "out": "docs",
-  "cname": "ts-data-structures.webdeveric.com",
   "excludeInternal": true,
-  "excludeNotDocumented": true
+  "excludeNotDocumented": true,
+  "cleanOutputDir": true,
+  "readme": "readme.md",
+  "gitRevision": "main",
+  "categorizeByGroup": true,
+  "navigation": {
+    "includeCategories": true,
+    "includeGroups": true
+  },
+  "sort": ["source-order"],
+  "treatWarningsAsErrors": true,
+  "validation": {
+    "notExported": true,
+    "invalidLink": true
+  }
 }
