@@ -1,7 +1,4 @@
-/**
- * @internal
- */
-class Node<Value> {
+export class Node<Value> {
   value: Value;
 
   next: Node<Value> | null;
